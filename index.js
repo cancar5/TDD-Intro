@@ -13,6 +13,16 @@
  */
 export function sumDouble(num1, num2) {
   /* TODO */
+
+  // if the two numbers are the same
+  if (num1 === num2) {
+    // return double of the two numbers added together
+    return (num1 + num2) * 2;
+  } else {
+    // Otherwise return the sum of two different positive numbers
+    // return the sum of two different numbers
+    return num1 + num2;
+  }
 }
 
 /**
@@ -29,10 +39,18 @@ export function sumDouble(num1, num2) {
  */
 export function makes10(num1, num2) {
   /* TODO */
+  //export allows you to take variable and move to another file
+  if (num1 === 10 || num2 === 10) {
+    return true;
+  } else if (num1 + num2 === 10) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
- * Hint: Math.abs(num) returns the absolute value of num.
+ * Hint: Math.abs(num) returns the absolute value of num. Converts negative numbers to positive.
  *
  * @param {number} n - The number to check.
  * @param {number} distance - The allowed distance from 100.
@@ -47,7 +65,19 @@ export function makes10(num1, num2) {
  */
 export function near100(n, distance) {
   /* TODO */
+  // if (n >= 100 && n <= 100) {
+  //   return false;
+  // }
+  // if (Math.abs(100 + n >= distance)) {
+  //   return true;
+  if (Math.abs(100 - n <= distance)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+//COMEBACK!!!
 
 /**
  * Hint: use the remainder operator (%)
@@ -64,7 +94,17 @@ export function near100(n, distance) {
  */
 export function isMultiple35(n) {
   /* TODO */
+  if (n % 3 === 0) {
+    return true;
+  } else if (n % 5 === 0) {
+    return true;
+  } else if (n % 0 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+// if a number is divisble by 3 or 5 write true otherwise false
 
 /**
  * Hint: use the remainder operator (%)
@@ -82,6 +122,12 @@ export function isMultiple35(n) {
  */
 export function shareLastDigit(num1, num2) {
   /* TODO */
+  // use remainder operator to see if both numbers share the same last digit true otherwise false
+  if (num1 % 10 === num2 % 10) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -99,6 +145,14 @@ export function shareLastDigit(num1, num2) {
  */
 export function isColdAndHot(temp1, temp2) {
   /* TODO */
+  //one temp < 0 && the other temp > 100 its true.
+  if (temp1 < 0 && temp2 > 100) {
+    return true;
+  } else if (temp1 > 100 && temp2 < 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -115,13 +169,15 @@ export function isColdAndHot(temp1, temp2) {
  */
 export function makeABBA(A, B) {
   /* TODO */
+  // A(first) + B(second) + B (second) + A (first)
+  return A + B + B + A;
 }
 
 /**
  * Returns a string of the form short+long+short, with the shorter string
  * on the outside and the longer string on the inside.
  *
- * You may assume that the strings will have different lengths.
+ * You may assume that the strings will have different lengths. (.length)
  *
  * @param {string} str1 - First string.
  * @param {string} str2 - Second string.
@@ -136,6 +192,12 @@ export function makeABBA(A, B) {
  */
 export function makeSLS(str1, str2) {
   /* TODO */
+
+  if (str1.length < str2.length) {
+    return str1 + str2 + str1; // shorter 1st string on outside
+  } else {
+    return str2 + str1 + str2; //shorter 2nd strig on outside
+  }
 }
 
 /**
@@ -143,6 +205,9 @@ export function makeSLS(str1, str2) {
  * If either of you is very stylish (8 or more), the result is 2 (yes).
  * With the exception that if either of you has style 2 or less, the result is 0 (no).
  * Otherwise, the result is 1 (maybe).
+ *
+ * // very stylish: you or date >= 8 the result is yes(2)
+ * // style <= 2 is no(0)
  *
  * @param {number} you - Your style rating from 0 to 10.
  * @param {number} date - Your date's style rating from 0 to 10.
@@ -157,6 +222,14 @@ export function makeSLS(str1, str2) {
  */
 export function canEnterClub(you, date) {
   /* TODO */
+  if (you <= 2 || date <= 2) {
+    return 0;
+  }
+  if (you >= 8 || date >= 8) {
+    return 2;
+  } else {
+    return 1;
+  }
 }
 
 /**
@@ -178,4 +251,13 @@ export function canEnterClub(you, date) {
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
   /* TODO */
+  //isMorning + isBoss = answer (true and true)
+  //isAsleep = no answer (false, bc shouldn't answer phone asleep)
+  if (!isMorning && !isAsleep) {
+    return true;
+  } else if (isMorning && !isAsleep && isBoss) {
+    return true;
+  } else {
+    return false;
+  }
 }
