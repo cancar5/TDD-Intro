@@ -77,7 +77,7 @@ export function near100(n, distance) {
   }
 }
 
-//COMEBACK!!!
+//
 
 /**
  * Hint: use the remainder operator (%)
